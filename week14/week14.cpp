@@ -3,34 +3,34 @@ void Fbmi(float*, float*, float*);
 
 int main()
 {
-	float high , weight ;
-	float bmi;
+	float data[5] ;
+	//1 weight 2 high 3 bmi
 	printf("input your weight [kg.] : ");
-	scanf_s("%f", &weight);
+	scanf_s("%f", &data[1]);
 	printf("input your high [cm.] : ");
-	scanf_s("%f", &high);
+	scanf_s("%f", &data[2]);
 
-	high /= 100;
-	Fbmi( &weight, &high, &bmi);
+	data[2] /= 100;
+	Fbmi( &data[1], &data[2], &data[3]);
 
-	printf("\n\nyour BMI = %.2f",bmi);
-	if (bmi < 18.5)
+	printf("\n\nyour BMI = %.2f", data[3]);
+	if (data[3] < 18.5)
 	{
 		printf(" (very thin)\n\n");
 	}
-	if (bmi >= 18.5 && bmi <= 22.90)
+	if (data[3] >= 18.5 && data[3] <= 22.90)
 	{
 		printf(" (good health)\n\n");
 	}
-	if (bmi > 22.90 && bmi <= 24.90)
+	if (data[3] > 22.90 && data[3] <= 24.90)
 	{
 		printf(" (buxom Danger level 1)\n\n");
 	}
-	if (bmi > 24.90 && bmi <= 29.90)
+	if (data[3] > 24.90 && data[3] <= 29.90)
 	{
 		printf(" (fat Danger level 2)\n\n");
 	}
-	if (bmi > 29.0)
+	if (data[3] > 29.0)
 	{
 		printf(" (very fat Danger level 3!!)\n\n");
 	}
